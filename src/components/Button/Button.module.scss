@@ -1,0 +1,48 @@
+.button {
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.primary{
+	background-color: #0061ff;
+	color: white;
+	
+	&:hover {
+		background: #004eff;
+	}
+	&:disabled {
+		background: #5b8ad6;
+		cursor:not-allowed;
+	}
+}
+
+.secundary {
+	background-color: black;
+	color: white;
+
+	&:hover {
+		background: black;
+	}
+}
+.transparent {
+	background-color: transparent;
+	color: black;
+	padding: 0;
+	border-radius: 0;
+
+	&:hover {
+		background: transparent;
+	}
+}
+
+.small{
+	padding: 8px 13px;
+}
+.medium{
+	padding: 17px 24px;
+}
+.big{
+	padding: 17px 24px;
+	width: 100%;
+}

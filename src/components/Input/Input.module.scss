@@ -1,0 +1,38 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.wrapper{
+	position: relative;
+
+	span{
+		position: absolute;
+		top: 12px;
+		z-index: 2;
+		right: 6px;
+		color: gray;
+		font-size: 14px;
+	}
+
+}
+.numberInput {
+	padding: 10px 16px;
+	line-height: 24px;
+	border: 1px solid #d8dde7;
+	border-radius: 4px;
+	width: 100%;
+}
+
+.validation{
+	font-size: 11px;
+	color:red;
+	padding: 0 10px;
+}
