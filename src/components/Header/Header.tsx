@@ -15,7 +15,7 @@ const Header: FC<HeaderProps> = ({ addonLeft, addonRight }) => {
 					<ul>
 						{addonLeft}
 					</ul> : null}
-				<span><Earth fill="white" height="26x" /></span>
+				<span>Neighborhood</span>
 				<ul>
 					{addonRight}
 				</ul>

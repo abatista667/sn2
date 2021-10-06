@@ -1,17 +1,13 @@
 
 import React from 'react';
-import Header from '../components/Header';
+import NormalLayout from '../../Layout/Normal'
 import Gallery from '../components/Gallery';
-import Body from '../components/Body'
 
 function GalleryPage() {
   return (
-    <div>
-      <Header />
-      <Body>
+      <NormalLayout>
         <Gallery />
-      </Body>
-    </div>
+      </NormalLayout>
   );
 }
 
