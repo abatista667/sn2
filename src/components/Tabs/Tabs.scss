@@ -1,0 +1,23 @@
+.tabHeaderContainer {
+    display: flex;
+    padding: 20px 0;
+}
+
+.tabHeader {
+    cursor: pointer;
+    height: 3rem;
+    width: 50%;
+    text-align: center;
+    border-bottom: 1px solid yellowgreen;
+
+    &.active{
+        border-bottom: 2px solid #007bff;
+        color: #007bff;
+        font-weight: 500;
+    }
+}
+.tabBody {
+    width: 90%;
+    margin: auto;
+    position: relative;
+}

@@ -1,0 +1,17 @@
+.ImgColoredCircleBorder{
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(90deg, #007bff, #004691);
+    border-radius: 50%;
+    position: relative;
+
+    img{
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        object-fit: cover;
+    }
+  }

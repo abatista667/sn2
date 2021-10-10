@@ -1,6 +1,7 @@
 import React, { FC } from "react";
+import { useHistory } from "react-router-dom";
+import config from "../../Configuration";
 import styles from "./Header.module.scss";
-import {ReactComponent  as Earth} from '../../assets/svg/earth.svg'
 
 interface HeaderProps {
 	addonLeft?: JSX.Element,
@@ -8,6 +9,9 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ addonLeft, addonRight }) => {
+	const { appName } = config;
+	const history = useHistory()
+
 	return (
 		<header>
 			<div className={styles.wrapper}>
@@ -15,7 +19,7 @@ const Header: FC<HeaderProps> = ({ addonLeft, addonRight }) => {
 					<ul>
 						{addonLeft}
 					</ul> : null}
-				<span>Neighborhood</span>
+				<span onClick={() =>{ history.push('/')}}>{appName}</span>
 				<ul>
 					{addonRight}
 				</ul>

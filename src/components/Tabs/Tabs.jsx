@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Tabs.scss'
 
 const TabsHeader = ({ tabs = [], active = 0, setActive }) => {
     return tabs.map((item, index) => {

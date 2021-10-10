@@ -1,0 +1,25 @@
+.notifications {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin: 0;
+
+    li {
+        padding: 10px 20px;
+        border-bottom: 1px solid lightgray;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+.message{
+    display: flex;
+    align-items: center;
+
+    div{
+        padding: 0 20px;
+    }
+}

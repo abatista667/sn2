@@ -1,0 +1,16 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 40px);
+    text-align: center;
+
+    h1{
+        font-size: 20px;
+        margin-top: 50px;
+    }
+
+    img{
+        width: 250px;
+        margin: 30px auto;
+    }
+}

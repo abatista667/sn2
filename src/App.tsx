@@ -1,18 +1,38 @@
 import React, { Suspense } from "react";
 import { Provider as JotaiProvider } from "jotai";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import PostPage from "./pages/Posts/PostPage";
+import ProfilePage from './pages/Profile/Profile'
+import NotificationPage from "./pages/Notification/NotificationPage";
+
+const Menu = () => <>
+	<ul>
+		<li><Link to="/profile">Mi perfil</Link></li>
+		<li><Link to="/posts">Posts</Link></li>
+		<li><Link to="/login">Login</Link></li>
+		<li><Link to="/notifications">Notification</Link></li>
+	</ul>
+</>
 
 const Routes = () => {
 	return <Suspense fallback={<>Loading</>}>
 		<Router>
 			<Switch>
 				<Route path="/" exact>
-					<PostPage />
+					<Menu />
+				</Route>
+				<Route path="/profile" exact>
+					<ProfilePage />
 				</Route>
 				<Route path="/posts" exact>
 					<PostPage />
+				</Route>
+				<Route path="/login" exact>
+					<Login />
+				</Route>
+				<Route path="/notifications" exact>
+					<NotificationPage />
 				</Route>
 			</Switch>
 		</Router>

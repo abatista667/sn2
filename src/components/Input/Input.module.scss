@@ -12,6 +12,7 @@ input[type=number] {
 
 .wrapper{
 	position: relative;
+    margin: 5px;
 
 	span{
 		position: absolute;
@@ -22,13 +23,6 @@ input[type=number] {
 		font-size: 14px;
 	}
 
-}
-.numberInput {
-	padding: 10px 16px;
-	line-height: 24px;
-	border: 1px solid #d8dde7;
-	border-radius: 4px;
-	width: 100%;
 }
 
 .validation{

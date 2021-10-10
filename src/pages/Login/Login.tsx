@@ -7,7 +7,9 @@ import Form from '../../components/Form/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import { UserModel } from '../../models/loginModel';
-import { useHistory } from 'react-router-dom'; 
+import { useHistory } from 'react-router-dom';
+import styles from './Login.module.scss'
+import loginButton from '../../assets/fb.png'
 
 interface LoginProps {
     username?: string,
@@ -41,6 +43,16 @@ const Login: FC<LoginProps> = ({ username, password, updateUser }) => {
     );
 }
 
+const FacebookLogin: FC<{}> = () => <RegistrationLayout header={<Header />}>
+    <Form>
+        <div className={styles.login}>
+            <h1>The place to meet your Neighbors</h1>
+            <img src={loginButton} />
+        </div>
+    </Form>
+</RegistrationLayout>
+
+
 const LoginContainer = () => {
     const [model, setModel] = useState<UserModel>({});
     const updateUser = (value: string, name: string) => {
@@ -54,7 +66,7 @@ const LoginContainer = () => {
         updateUser
     }
 
-    return <Login {...props} />
+    return <FacebookLogin />
 }
 
 
