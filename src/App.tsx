@@ -5,6 +5,7 @@ import Login from "./pages/Login/Login";
 import PostPage from "./pages/Posts/PostPage";
 import ProfilePage from './pages/Profile/Profile'
 import NotificationPage from "./pages/Notification/NotificationPage";
+import ChatPage from "./pages/Chat/ChatPage";
 
 const Menu = () => <>
 	<ul>
@@ -12,6 +13,7 @@ const Menu = () => <>
 		<li><Link to="/posts">Posts</Link></li>
 		<li><Link to="/login">Login</Link></li>
 		<li><Link to="/notifications">Notification</Link></li>
+		<li><Link to="/chat">Chat</Link></li>
 	</ul>
 </>
 
@@ -33,6 +35,9 @@ const Routes = () => {
 				</Route>
 				<Route path="/notifications" exact>
 					<NotificationPage />
+				</Route>
+				<Route path="/chat" exact>
+					<ChatPage />
 				</Route>
 			</Switch>
 		</Router>

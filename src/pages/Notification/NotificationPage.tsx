@@ -2,7 +2,6 @@ import React from "react";
 import NormalLayout from "../../Layout/Normal";
 import styles from './Notification.module.scss';
 import me from '../../assets/me.png'
-import CirclePictureContainer from "../../components/CirclePictureContainer/CirclePictureContainer";
 
 interface Notification {
     userName: string;

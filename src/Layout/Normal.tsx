@@ -2,7 +2,8 @@ import React, { FC } from "react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import  Bell from '../pages/Notification/NotificationBell'
-import { ReactComponent as Menu } from '../assets/svg/menu.svg'
+import { ReactComponent as Chat } from '../assets/svg/chat.svg'
+import { ReactComponent as Group } from '../assets/svg/menu.svg'
 import styles from './Registration.module.scss';
 import Account from "../components/Account/Account";
 
@@ -15,7 +16,8 @@ const NormalLayout: FC<NormalLayout> = ({ children }) => {
     </>
     const AddonLeftFooter = () => <>
         <li><Account /></li>
-        <li><Menu /></li>
+        <li><Chat /></li>
+        <li><Group /></li>
     </>
 
     const header = <Header addonRight={<AddonRightHeader />} />
