@@ -7,4 +7,9 @@ const CirclePictureContainer = ({ src, className }) => {
         </div>
 }
 
+export const SmallCirclePicture= ({ src, alt }) => <img src={src} alt={alt} className="smallRoundImg" />
+
+
+
+
 export default CirclePictureContainer

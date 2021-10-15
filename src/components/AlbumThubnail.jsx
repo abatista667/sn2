@@ -1,12 +1,9 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom';
 
-const AlbumThubnail = ({ img, name="TEST", price="5 USD", history }) => {
-    return <div className="thubnail" onClick={() => history.push('gallery')}>
-        <img src={img} className="third" />
-        <img src={img} className="second" />
+const AlbumThubnail = ({ img }) => {
+    return <div className="thubnail" onClick={undefined}>
         <img src={img} />
-        <div>{name} - {price}</div>
     </div>
 }
 

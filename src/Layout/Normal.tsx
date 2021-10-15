@@ -3,30 +3,37 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import  Bell from '../pages/Notification/NotificationBell'
 import { ReactComponent as Chat } from '../assets/svg/chat.svg'
-import { ReactComponent as Group } from '../assets/svg/menu.svg'
+import { ReactComponent as Menu } from '../assets/svg/menu.svg'
+import { ReactComponent as Account } from '../assets/svg/user.svg'
+import { ReactComponent as List } from '../assets/svg/earth.svg'
 import styles from './Registration.module.scss';
-import Account from "../components/Account/Account";
+import { useHistory } from "react-router-dom";
 
 interface NormalLayout {
+    title?: string
 }
 
-const NormalLayout: FC<NormalLayout> = ({ children }) => {
+const NormalLayout: FC<NormalLayout> = ({ children, title }) => {
+    const history = useHistory();
     const AddonRightHeader = () => <>
         <li><Bell /></li>
     </>
     const AddonLeftFooter = () => <>
-        <li><Account /></li>
-        <li><Chat /></li>
-        <li><Group /></li>
+        <li><List onClick={() => history.push('/posts')} /></li>
+        <li><Chat onClick={() => history.push('/chat')} /></li>
+        <li><Account onClick={() => history.push('/profile/edit')} /></li>
+        <li><Menu onClick={() => history.push('/')} /></li>
     </>
 
     const header = <Header addonRight={<AddonRightHeader />} />
     return (
         <div>
             {header}
-            <div className={styles.Layout}>
+            <div className={styles.layout}>
+                {title ? <h1>{title}</h1> : null}
                 {children}
             </div>
+            <div className={styles.margin}></div>
             <Footer addonRight={<AddonLeftFooter />} />
         </div>
     );

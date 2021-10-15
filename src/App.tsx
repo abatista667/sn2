@@ -6,14 +6,18 @@ import PostPage from "./pages/Posts/PostPage";
 import ProfilePage from './pages/Profile/Profile'
 import NotificationPage from "./pages/Notification/NotificationPage";
 import ChatPage from "./pages/Chat/ChatPage";
+import ContactPage from "./pages/Contacts/ContactsPage";
+import MenuPage from "./pages/Menu/MenuPage";
+import GalleryPage from "./pages/Gallery/GalleryPage";
 
 const Menu = () => <>
 	<ul>
-		<li><Link to="/profile">Mi perfil</Link></li>
+		<li><Link to="/profile/edit">Mi perfil</Link></li>
 		<li><Link to="/posts">Posts</Link></li>
 		<li><Link to="/login">Login</Link></li>
 		<li><Link to="/notifications">Notification</Link></li>
 		<li><Link to="/chat">Chat</Link></li>
+		<li><Link to="/contacts">Contacts</Link></li>
 	</ul>
 </>
 
@@ -22,9 +26,9 @@ const Routes = () => {
 		<Router>
 			<Switch>
 				<Route path="/" exact>
-					<Menu />
+					<MenuPage />
 				</Route>
-				<Route path="/profile" exact>
+				<Route path="/profile/edit" exact>
 					<ProfilePage />
 				</Route>
 				<Route path="/posts" exact>
@@ -38,6 +42,12 @@ const Routes = () => {
 				</Route>
 				<Route path="/chat" exact>
 					<ChatPage />
+				</Route>
+				<Route path="/contacts" exact>
+					<ContactPage />
+				</Route>
+				<Route path="/gallery" exact>
+					<GalleryPage />
 				</Route>
 			</Switch>
 		</Router>

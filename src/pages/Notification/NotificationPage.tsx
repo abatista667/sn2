@@ -1,7 +1,9 @@
 import React from "react";
-import NormalLayout from "../../Layout/Normal";
 import styles from './Notification.module.scss';
 import me from '../../assets/me.png'
+import List from "../../components/List/List";
+import { SmallCirclePicture } from "../../components/CirclePictureContainer/CirclePictureContainer";
+import NoFooter from "../../Layout/NoFooter";
 
 interface Notification {
     userName: string;
@@ -51,19 +53,16 @@ const renderNotification = ({ userName, type, postId }: Notification) => {
         }
     }
 
-    return <li><div className={styles.message}>
-        <img src={me} alt={userName} />
+    return <div className={styles.message}>
+        <SmallCirclePicture src={me} alt={userName} />
         <div>{getMessage()}</div>
     </div>
-    </li>
 }
 
 const NotificationPage = () => {
-    return <NormalLayout>
-        <ul className={styles.notifications}>
-            {mockData.map(renderNotification)}
-        </ul>
-    </NormalLayout>
+    return <NoFooter title="Notifications">
+        <List elements={mockData} mapper={renderNotification} />
+    </NoFooter>
 }
 
 
