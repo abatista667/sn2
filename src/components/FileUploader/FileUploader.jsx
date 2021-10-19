@@ -2,8 +2,8 @@
 import React from 'react'
 import { useRef } from 'react'
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Modal from './Modal'
+import { ReactComponent as Plus } from '../../assets/svg/camera.svg'
+import './FileUploader.scss'
 
 const FileUploader = () => {
     const [pic, setPic] = useState('')
@@ -27,9 +27,9 @@ const FileUploader = () => {
     }
     return <div className="picSelector">
         <div className="picSelectorButton">
-            <FontAwesomeIcon onClick={open} icon="camera" className="icon" />
+            <Plus onClick={open}  className="icon" />
         </div>
-        {showSelectedPic && <Modal close={closeModal}>
+        {showSelectedPic && 
             <div className="picSelectorImgWrapper">
                 <div className="picSelectorImgContainer">
                     <img className="selectedPic" src={pic} />
@@ -38,10 +38,9 @@ const FileUploader = () => {
                         <button className="secondary" onClick={closeModal}>Cancelar</button>
                     </div>
                 </div>
-
-            </div>
-        </Modal>}
+            </div>}
         <input ref={fileRef}
+            className="updloader"
             type="file"
             name="pic"
             accept=".jpg,.png,.bmp,gif"

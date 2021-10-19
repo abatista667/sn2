@@ -9,6 +9,8 @@ import ChatPage from "./pages/Chat/ChatPage";
 import ContactPage from "./pages/Contacts/ContactsPage";
 import MenuPage from "./pages/Menu/MenuPage";
 import GalleryPage from "./pages/Gallery/GalleryPage";
+import useQueryString from "./hooks/useQueryString";
+import ResolutionNotSoported from "./components/ResolutionNotSoported/ResolutionNotSoported";
 
 const Menu = () => <>
 	<ul>
@@ -55,6 +57,10 @@ const Routes = () => {
 }
 
 function App() {
+	const isMobile = useQueryString();
+
+	if(!isMobile) return <ResolutionNotSoported />
+
 	return (
 		<JotaiProvider>
 			<Routes />

@@ -10,8 +10,14 @@
     position: relative;
     width: 32.9%;
     display: flex;
-    margin: 0;
+    margin: 1px 0 0;
     flex-direction: column;
+  }
+
+  .thubnail:nth-child(3),
+  .thubnail:nth-child(1),
+  .thubnail:nth-child(2){
+    margin: 0;
   }
   
   .Albumnes{

@@ -6,28 +6,32 @@ import { ReactComponent as Like } from '../../assets/svg/like.svg'
 import { ReactComponent as Dislike } from '../../assets/svg/dislike.svg'
 import { ReactComponent as Comment } from '../../assets/svg/comment.svg'
 import styles from './Post.module.scss'
+import Post from '../../models/Post'
+import { useAtom } from 'jotai'
+import postAtom from '../../store/post'
+import PostEditor from './PostEditor'
 
-const Post = () => {
+const PostPage = () => {
+    const [posts] = useAtom(postAtom)
     return <NormalLayout>
+        <PostEditor />
         <div className={styles.posts}>
-            <WallElement />
-            <WallElement />
-            <WallElement />
+            {posts.map(item => <WallElement {... item} />)}
         </div>
     </NormalLayout>
 }
 
-const WallElement = () => {
+const WallElement: FC<Post> = ({username, img, profilePic, ago}) => {
     const user = {
-        profilePic: profile,
-        name: 'Ariel Batista'
+        profilePic,
+        name: username
     }
     return <>
         <div className={styles.separator} />
         <div className={styles.element}>
-            <WallElementHeader user={user} />
+            <WallElementHeader user={user} ago={ago} />
             <div className={styles.imgElementWrapper}>
-                <img src={me} />
+                <img src={img[0]} />
             </div>
             <hr />
             <div className={styles.actionWrapper}>
@@ -39,7 +43,7 @@ const WallElement = () => {
     </>
 }
 
-const WallElementHeader: FC<{ user: any }> = ({ user }) => {
+const WallElementHeader: FC<{ user: any, ago: string }> = ({ user, ago }) => {
     return <>
         <div className={styles.header}>
             <div className={styles.imgWrapper}>
@@ -47,11 +51,11 @@ const WallElementHeader: FC<{ user: any }> = ({ user }) => {
             </div>
             <div className={styles.text}>
                 <h6>{user.name}</h6>
-                <span>1h</span>
+                <span>{ago}</span>
             </div>
         </div>
     </>
 }
 
 
-export default Post
+export default PostPage
