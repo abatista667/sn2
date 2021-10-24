@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { useEffect } from 'react'
+import { useEffect } from 'react';
+import './Modal.scss'
 
 
 const Modal = ({ close, children }) => {

@@ -1,0 +1,20 @@
+.postEditor {
+    padding: 20px;
+
+    .buttonWrapper {
+        margin: 10px 0 0;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            display: flex;
+            align-items: center;
+
+            svg{
+                width: 20px;
+                margin: 0 5px;
+                fill: #555;
+            }
+        }
+    }
+}

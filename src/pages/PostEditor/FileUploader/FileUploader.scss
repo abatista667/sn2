@@ -1,0 +1,60 @@
+.picSelectorImgWrapper {
+  width: 100%;
+}
+.picSelectorButton {
+  width: fit-content;
+  margin: auto;
+}
+
+.picSelectorImgWrapper {
+  margin: auto;
+  width: fit-content;
+  height: 100vh;
+  width: 90%;
+  background-color: black;
+  display: flex;
+  width: 100%;
+}
+
+.updloader {
+  display: none;
+}
+
+.picSelectorImgContainer {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+
+.picSelectorImgContainer .buttonWrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+  max-height: 11rem;
+  background-color: var(--dark-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picSelectorImgContainer .buttonWrapper button:first-child {
+  margin-right: 1rem;
+}
+
+.selectedPic {
+  height: 100vh;
+  object-fit: cover;
+  width: 100%;
+}
+
+.picSelectorImgContainer .buttonWrapper{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 95px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

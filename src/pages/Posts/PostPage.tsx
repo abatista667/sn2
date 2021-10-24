@@ -1,6 +1,4 @@
 import React, { FC } from 'react'
-import me from '../../assets/me.png'
-import profile from '../../assets/profile.jpg'
 import NormalLayout from '../../Layout/Normal'
 import { ReactComponent as Like } from '../../assets/svg/like.svg'
 import { ReactComponent as Dislike } from '../../assets/svg/dislike.svg'
@@ -9,12 +7,17 @@ import styles from './Post.module.scss'
 import Post from '../../models/Post'
 import { useAtom } from 'jotai'
 import postAtom from '../../store/post'
-import PostEditor from './PostEditor'
+import { ReactComponent as Plus } from '../../assets/svg/plus.svg'
+import { useHistory } from 'react-router-dom'
 
 const PostPage = () => {
     const [posts] = useAtom(postAtom)
+    const history = useHistory();
+
     return <NormalLayout>
-        <PostEditor />
+                <div className={styles.buttonWrapper}>
+            <Plus className="icon" onClick={() => history.push('/posts/edit')} />
+        </div>
         <div className={styles.posts}>
             {posts.map(item => <WallElement {... item} />)}
         </div>

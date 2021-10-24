@@ -11,6 +11,7 @@ import MenuPage from "./pages/Menu/MenuPage";
 import GalleryPage from "./pages/Gallery/GalleryPage";
 import useQueryString from "./hooks/useQueryString";
 import ResolutionNotSoported from "./components/ResolutionNotSoported/ResolutionNotSoported";
+import PostEditor from "./pages/PostEditor/PostEditor";
 
 const Menu = () => <>
 	<ul>
@@ -35,6 +36,9 @@ const Routes = () => {
 				</Route>
 				<Route path="/posts" exact>
 					<PostPage />
+				</Route>
+				<Route path="/posts/edit/">
+					<PostEditor />
 				</Route>
 				<Route path="/login" exact>
 					<Login />
