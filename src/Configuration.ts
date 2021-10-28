@@ -4,8 +4,8 @@ interface Config {
 }
 
 const config: Config = {
-    appName: 'Neighborhood',
-    theme: 'Neighborhood'
+    appName: 'social network',
+    theme: 'default'
 }
 
 export default config
