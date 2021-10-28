@@ -13,6 +13,7 @@
   width: 90%;
   background-color: black;
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -21,21 +22,17 @@
 }
 
 .picSelectorImgContainer {
-  width: fit-content;
-  margin: auto;
+  width: 105%;
+  height: calc(100vh - 100px);
+  margin: 0 0 0 -5px;
   position: relative;
+  overflow-x: auto;
 }
 
-.picSelectorImgContainer .buttonWrapper {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 30%;
-  max-height: 11rem;
-  background-color: var(--dark-white);
+.buttonWrapper {
+  margin: auto 0 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
 }
 
 .picSelectorImgContainer .buttonWrapper button:first-child {
@@ -43,9 +40,10 @@
 }
 
 .selectedPic {
-  height: 100vh;
   object-fit: cover;
-  width: 100%;
+  width: 49%;
+  height: 200px;
+  margin: 0 3px 0 0;
 }
 
 .picSelectorImgContainer .buttonWrapper{
