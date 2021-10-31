@@ -6,6 +6,8 @@
 		font-size: 16px; 
 		background-color: #f3f3f3;
 	}
+	overflow-x: auto;
+	height: calc(100vh - 90px);
 }
 
 .container{
