@@ -2,13 +2,15 @@ import React, { FC } from 'react'
 import NormalLayout from '../../Layout/Normal'
 import { ReactComponent as Like } from '../../assets/svg/like.svg'
 import { ReactComponent as Dislike } from '../../assets/svg/dislike.svg'
-import { ReactComponent as Comment } from '../../assets/svg/comment.svg'
+import { ReactComponent as CommentIcon } from '../../assets/svg/comment.svg'
 import styles from './Post.module.scss'
 import Post from '../../models/Post'
 import { useAtom } from 'jotai'
 import postAtom from '../../store/post'
 import { ReactComponent as Plus } from '../../assets/svg/plus.svg'
 import { useHistory } from 'react-router-dom'
+import Comment from './Comments/Comments'
+import Input from '../../components/Input'
 
 const PostPage = () => {
     const [posts] = useAtom(postAtom)
@@ -40,8 +42,12 @@ const WallElement: FC<Post> = ({username, img, profilePic, ago}) => {
             <div className={styles.actionWrapper}>
                 <Like />
                 <Dislike />
-                <Comment />
+                <CommentIcon />
             </div>
+            <Input name={'add comment'} onChange={function (value: string, name: string): void {
+                throw new Error('Function not implemented.')
+            } } placeholder="add new comment" className={styles.addComment} />
+            <Comment userName={username} content='comentario ' />
         </div>
     </>
 }
