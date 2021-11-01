@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import  Bell from '../pages/Notification/NotificationBell'
+import Bell from '../pages/Notification/NotificationBell'
 import { ReactComponent as Chat } from '../assets/svg/chat.svg'
 import { ReactComponent as Menu } from '../assets/svg/menu.svg'
 import { ReactComponent as Account } from '../assets/svg/user.svg'
@@ -28,12 +28,12 @@ const NormalLayout: FC<NormalLayout> = ({ children, title }) => {
     const header = <Header addonRight={<AddonRightHeader />} />
     return (
         <div>
-            {header}
             <div className={styles.layout}>
+                {header}
                 {title ? <h1>{title}</h1> : null}
                 {children}
+                <div className={styles.margin}></div>
             </div>
-            <div className={styles.margin}></div>
             <Footer addonRight={<AddonLeftFooter />} />
         </div>
     );
